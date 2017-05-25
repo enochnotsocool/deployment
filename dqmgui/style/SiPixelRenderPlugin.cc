@@ -155,7 +155,7 @@ private:
       l->SetBit(kCanDelete);
       l->SetLineWidth(2);
       l->SetLineStyle(1);
-      l->SetLineColor(1);
+      l->SetLineColor(c);
       l->Draw();
     }
 
@@ -356,6 +356,14 @@ private:
          draw_line(259.5,259.5,0,160);
          draw_line(311.5,311.5,0,160);
          draw_line(363.5,363.5,0,160);
+
+         if( o.name.find("Shell_p") != std::string::npos ){
+           draw_line(0,   51.5,79.5,79.5,kGray);
+           draw_line(51.5,51.5,79.5,160 ,kGray);
+         } else {
+           draw_line(363.5,416,  79.5,79.5,kGray);
+           draw_line(363.5,363.5,0   ,79.5,kGray);
+         }
       }
    }
 
